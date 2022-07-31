@@ -1,29 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html class="app-html">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>PseudoSun</title>
-    <style>
-        body {
-            margin: 0;
-        }
-
-        #blocker {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    <!-- Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/icon/favicon.ico">
+    <link rel="manifest" href="/icon/site.webmanifest">
+    <!-- CSS -->
+    <link id="theme-css" rel="stylesheet" type="text/css" href="/css/theme-light.css">
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/site/cookies.js"></script>
+    <script src="/js/site/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.140.0/build/three.min.js"></script>
+    <script src="js/app/perlin.js"></script>
+    <script type="module" src="js/app/app.js"></script>
 </head>
 
-<body>
-    <div id="blocker"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/three@0.140.0/build/three.min.js"></script>
-    <script type="module" src="js/app.js"></script>
+<body class="app-body">
+    <div id="menu-hint" class="p-2">
+        <div class="content has-text-black-themed">
+            Press <code>E</code> to show the menu
+        </div>
+    </div>
+    <div id="blocker">
+        <div id="menu" class="p-5">
+            <h2 class="title is-size-2 has-text-black-themed has-text-centered block">PseudoSun</h2>
+            <button id="play-button" class="button is-info is-fullwidth p-0 mb-4">Play</button>
+            <div class="columns mx-0 mt-0 is-gapless is-mobile block">
+                <div class="column is-auto p-0">
+                    <a href="/about" target="_blank" class="button is-info is-fullwidth p-0">About</a>
+                </div>
+                <div class="column is-narrow mx-2"></div>
+                <div class="column is-auto p-0">
+                    <a href="https://github.com/evoth/pseudosun" target="_blank"
+                        class="button is-info is-fullwidth p-0">GitHub</a>
+                </div>
+            </div>
+            <div class="content has-text-black-themed block">
+                <h3>Controls</h3>
+                <ul>
+                    <li><strong>Look:</strong> Use the <code>mouse</code> to look around and choose which direction you
+                        want to go.</li>
+                    <li><strong>Move horizontally:</strong> Hold the <code>WASD</code> keys to move forward, left,
+                        backwards, and right, respectively.</li>
+                    <li><strong>Move vertically:</strong> Hold the <code>space</code> key to move up, and the
+                        <code>shift</code> key to move down.
+                    </li>
+                    <li><strong>Go faster:</strong> Tap the <code>W</code> key multiple times before holding it down to
+                        go faster. Each additional tap multiplies the speed by 2.</li>
+                    <li><strong>Pause:</strong> Press the <code>E</code> key to toggle the menu.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

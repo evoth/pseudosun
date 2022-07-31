@@ -10,10 +10,10 @@ function init() {
     world = new World();
 }
 
+// Main animation loop
 function animate() {
 
-    requestAnimationFrame(animate);
-
     world.doFrame();
+    requestAnimationFrame(animate);
 
 }

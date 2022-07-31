@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PseudoSun - About</title>
+    <!-- Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/icon/favicon.ico">
+    <link rel="manifest" href="/icon/site.webmanifest">
+    <!-- CSS -->
+    <link id="theme-css" rel="stylesheet" type="text/css" href="/css/theme-light.css">
+    <!-- Javascript -->
+    <script src="https://kit.fontawesome.com/a00713ef8f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/site/cookies.js"></script>
+    <script src="/js/site/theme.js"></script>
+</head>
+
+<body>
+    <!-- Begin title hero -->
+    <section class="hero has-background-primary">
+        <!-- Begin nav -->
+        <div class="hero-head">
+            <div class="columns mt-5 mx-5 is-multiline is-mobile is-vcentered is-centered">
+                <div class="column is-narrow">
+                    <a id="theme-button" title="Toggle dark mode" class="link-light is-medium">
+                        <i class="fa-solid fa-moon fa-lg"></i>
+                    </a>
+                </div>
+                <div class="column is-narrow">
+                    <a href="https://github.com/evoth" target="_blank" title="My Github" class="link-light is-medium">
+                        <i class="fa-brands fa-github fa-lg"></i>
+                    </a>
+                </div>
+                <div class="column is-hidden-mobile"></div>
+                <div class="column is-narrow">
+                    <a href="https://github.com/evoth/pseudosun" target="_blank" class="link-light">Github
+                        Repo</a>
+                </div>
+                <div class="column is-narrow">
+                    <a href="https://ethanvoth.com" target="_blank" class="link-light">Main Website</a>
+                </div>
+            </div>
+        </div>
+        <!-- End nav -->
+        <!-- Begin hero body -->
+        <div class="hero-body mb-6">
+            <div class="columns is-centered">
+                <a href="/">
+                    <div class="column has-text-centered is-narrow text-hover-shadow">
+                        <div class="block mb-3">
+                            <h2 class="title block mb-3 is-size-0 has-text-white">
+                                PseudoSun
+                            </h2>
+                        </div>
+                        <div class="block" style="max-width: 600px; margin-left:auto; margin-right: auto;">
+                            <h2 class="subtitle has-text-primary-light">
+                                A 3D experience that allows you to explore a virtual, procedurally generated world.
+                            </h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- End hero body -->
+    </section>
+    <!-- End title hero -->
+    <div class="container is-max-desktop py-6">
+        <!-- Begin about section -->
+        <section id="about" class="section content has-text-black-themed">
+            <h2 class="title is-size-2" id="web-app">Web App</h2>
+            <p>See it in action at <a href="https://pseudosun.ethanvoth.com">https://pseudosun.ethanvoth.com</a>!
+                PseudoSun is very much a work-in-progress, so see below for instructions on how to use the program
+                currently.</p>
+            <h2 class="title is-size-2" id="screenshots">Screenshots</h2>
+            <p><a style="padding: 3px" href="/screenshots/screenshot_1.png"><img src="/screenshots/screenshot_1.png"
+                        alt="PseudoSun screenshot 1" width="400"></a><a style="padding: 3px"
+                    href="/screenshots/screenshot_2.png"><img src="/screenshots/screenshot_2.png"
+                        alt="PseudoSun screenshot 2" width="400"></a><a style="padding: 3px"
+                    href="/screenshots/screenshot_3.png"><img src="/screenshots/screenshot_3.png"
+                        alt="PseudoSun screenshot 3" width="400"></a><a style="padding: 3px"
+                    href="/screenshots/screenshot_4.png"><img src="/screenshots/screenshot_4.png"
+                        alt="PseudoSun screenshot 4" width="400"></a></p>
+            <h2 class="title is-size-2" id="instructions">Instructions</h2>
+            <h3 id="warnings">Warnings</h3>
+            <ul>
+                <li>Since I have not yet implemented any optimizations, PseudoSun may have performance issues on your
+                    computer. In the future I hope to improve the speed and add various performance levels.</li>
+                <li>There are no limits on where you can go for now, so don't be alarmed if you find yourself under the
+                    ocean or inside a mountain!</li>
+            </ul>
+            <h3 id="controls">Controls</h3>
+            <ul>
+                <li><strong>Look:</strong> Use the <code>mouse</code> to look around and choose which direction you want
+                    to go.</li>
+                <li><strong>Move horizontally:</strong> Hold the <code>WASD</code> keys to move forward, left,
+                    backwards, and right, respectively.</li>
+                <li><strong>Move vertically:</strong> Hold the <code>space</code> key to move up, and the
+                    <code>shift</code> key to move down.</li>
+                <li><strong>Go faster:</strong> Tap the <code>W</code> key multiple times before holding it down to go
+                    faster. Each additional tap multiplies the speed by 2.</li>
+                <li><strong>Pause:</strong> Press the <code>E</code> key to toggle the menu.</li>
+            </ul>
+            <h2 class="title is-size-2" id="how-it-works">How it works</h2>
+            <h3 id="graphics">Graphics</h3>
+            <p>To manipulate and render the 3D geometry, it uses the <a href="https://threejs.org">Three.js</a> 3D
+                graphics library. This allows it to tap into the power of your graphics card directly from the browser
+                (whenever possible).</p>
+            <h3 id="terrain">Terrain</h3>
+            <p>The terrain consists of a heightmap of points on a (modified) plane. The height for each point is
+                determined by layering various transformations of <a
+                    href="https://en.wikipedia.org/wiki/Perlin_noise">Perlin noise</a> (generated using <a
+                    href="https://github.com/josephg/noisejs">noisejs</a>), which creates an organic, varied landscape.
+                There is an ocean, which only exists at a defined sea level.</p>
+            <h3 id="levels-of-detail">Levels of detail</h3>
+            <p>To reduce the total number of points that need to be rendered, polygons are rendered with higher density
+                nearer to the camera and lower density farther away, before stopping entirely. To achieve this, we
+                create a custom geometry using the following steps:</p>
+            <ol>
+                <li>Define a render distance and tile size. The tile size will be the length and width of our "tiles",
+                    which are the square units that make up our overall geometry. The render distance will be the
+                    maximum distance from the camera at which we will render a tile.</li>
+                <li>For each tile within the render distance, assign it a resolution based on its distance from the
+                    camera. This resolution defines how many points make up its geometry, and should therefore be higher
+                    the closer we are to the camera.</li>
+                <li>Make a <a href="https://threejs.org/docs/#api/en/geometries/PlaneGeometry">PlaneGeometry</a> to
+                    represent each tile, and merge them to create the overall terrain geometry.</li>
+                <li>For each point in the terrain geometry, update its height, which is determined by layering various
+                    transformations of Perlin noise, often by using <a href="https://thebookofshaders.com/13/">fractal
+                        Brownian motion</a>.</li>
+            </ol>
+            <p>Steps 1-3 only need to be executed when the program is initiated, and step 4 only happens when the camera
+                has moved into the boundaries of a new tile. (When the camera crosses a tile boundary, it is reset back
+                the length of one tile so that the geometry can remain stationary in virtual space).</p>
+            <h3 id="sky">Sky</h3>
+            <p>As of now, the sky is a simple skybox. I hope to improve this in the future by using shaders to simulate
+                the scattering effects of the atmosphere.</p>
+        </section>
+        <!-- End about section -->
+    </div>
+    <!-- Begin footer -->
+    <footer class="footer pb-6">
+        <div class="content has-text-centered">
+            Copyright © 2022 Ethan Voth / <a href="https://ethanvoth.com" target="_blank" class="link-light">Website</a>
+            / <a href="https://github.com/evoth" target="_blank" class="link-light">Github</a> / <a
+                href="https://ethanvoth.com/privacy/#privacy" target="_blank" class="link-light">Privacy Policy</a>
+        </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+</body>
+
+</html>

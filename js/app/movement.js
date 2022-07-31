@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
+// Modified by Ethan Voth
+
 const _euler = new THREE.Euler(0, 0, 0, 'YXZ');
 
 const _vector = new THREE.Vector3();
@@ -135,10 +137,24 @@ export class CameraMovement extends THREE.EventDispatcher {
 
         }();
 
+        /*
         this.moveForward = function (distance) {
 
             // move forward in direction of camera
             camera.getWorldDirection(_vector);
+            camera.position.addScaledVector(_vector, distance);
+
+        };
+        */
+
+        this.moveForward = function (distance) {
+
+            // move forward parallel to the xz-plane
+            // assumes camera.up is y-up
+            _vector.setFromMatrixColumn(camera.matrix, 0);
+
+            _vector.crossVectors(camera.up, _vector);
+
             camera.position.addScaledVector(_vector, distance);
 
         };
@@ -150,6 +166,12 @@ export class CameraMovement extends THREE.EventDispatcher {
             camera.position.addScaledVector(_vector, distance);
 
         };
+
+        this.moveUp = function (distance) {
+
+            camera.position.y += distance;
+
+        }
 
         this.lock = function () {
 

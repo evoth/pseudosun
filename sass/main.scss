@@ -1,0 +1,93 @@
+/* Background color of page */
+html {
+    background-color: $white-themed;
+}
+
+/* Huge title text */
+.title.is-size-0 {
+    font-size: 60px;
+}
+
+/* Subtle text shadow on mouse hover */
+.text-hover-shadow {
+    transition: text-shadow .5s ease, transform .5s ease;
+}
+
+.text-hover-shadow:hover {
+    text-shadow: 4px 4px 7px rgba(0, 0, 0, .5);
+    transform: translate(-4px, -4px);
+}
+
+/* Link animations */
+.link-light {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+
+.link-light:hover {
+    color: #000;
+}
+
+.link-light::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.link-light:hover::before {
+    transform: scaleX(1);
+}
+
+.link-light {
+    color: lighten($primary, 40%);
+    transition: color 0.3s ease;
+}
+
+.link-light:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* No margin for Three.js */
+.app-body {
+    margin: 0;
+}
+
+.app-html {
+    all: initial;
+}
+
+/* Blocker with menu */
+#blocker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($primary, 0.5);
+    transition: 0.3s ease;
+}
+
+#menu {
+    max-width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white-themed;
+    border-radius: $radius-large;
+}
+
+/* Menu hint */
+#menu-hint {
+    position: absolute;
+    background-color: rgba($white-themed, 0.5);
+    border-bottom-right-radius: $radius;
+    opacity: 0;
+    transition: 0.3s ease;
+}
