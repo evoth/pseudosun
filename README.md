@@ -20,7 +20,7 @@ See it in action at https://pseudosun.ethanvoth.com! PseudoSun is very much a wo
 - **Look:** Use the `mouse` to look around and choose which direction you want to go.
 - **Move horizontally:** Hold the `WASD` keys to move forward, left, backwards, and right, respectively.
 - **Move vertically:** Hold the `space` key to move up, and the `shift` key to move down.
-- **Go faster:** Tap the `W` key multiple times before holding it down to go faster. Each additional tap multiplies the speed by 2.
+- **Go faster:** Tap the `W` key multiple times right before holding it down to go faster. Each additional tap multiplies the speed by 2.
 - **Pause:** Press the `E` key to toggle the menu.
 
 ## How it works

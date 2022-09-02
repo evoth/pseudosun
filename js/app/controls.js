@@ -41,7 +41,7 @@ let prevTime = performance.now();
 const velocity = new THREE.Vector3();
 const direction = new THREE.Vector3();
 const motionSmooth = 10.0;
-const speed = 1000.0;
+const speed = 4000.0;
 const boostDelay = 300;
 
 export class Controls {
